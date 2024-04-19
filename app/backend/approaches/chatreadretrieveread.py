@@ -152,7 +152,7 @@ If you cannot generate a search query, return just the number 0.
                 deployment_id=self.chatgpt_deployment,
                 model=self.chatgpt_model,
                 messages=messages,
-                temperature=overrides.get("temperature") or 0.7,
+                temperature=overrides.get("temperature") or 0.0,
                 max_tokens=1024,
                 n=1,
                 stream=should_stream)

@@ -97,7 +97,7 @@ class ReadDecomposeAsk(AskApproach):
         cb_handler = HtmlCallbackHandler()
         cb_manager = CallbackManager(handlers=[cb_handler])
 
-        llm = AzureOpenAI(deployment_name=self.openai_deployment, temperature=overrides.get("temperature") or 0.3, openai_api_key=openai.api_key)
+        llm = AzureOpenAI(deployment_name=self.openai_deployment, temperature=overrides.get("temperature") or 0.0, openai_api_key=openai.api_key)
         tools = [
             Tool(name="Search", func=lambda _: 'Not implemented', coroutine=search_and_store, description="useful for when you need to ask with search", callbacks=cb_manager),
             Tool(name="Lookup", func=lambda _: 'Not implemented', coroutine=self.lookup, description="useful for when you need to ask with lookup", callbacks=cb_manager)
